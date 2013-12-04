@@ -1,0 +1,14 @@
+<h1><%= @post.title %></h1>
+
+<strong>URL:</strong><br>
+<%= @post.url %><br>
+
+<strong>CONTENT:</strong><br>
+<%= @post.content %><br>
+
+<strong>POSTED BY:</strong><br>
+<%= @post.user.username %>
+
+<br>
+
+<%= link_to "Back to All Posts", posts_path, class: "btn btn-primary" %>
