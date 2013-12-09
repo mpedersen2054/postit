@@ -1,14 +1,18 @@
-<h1><%= @post.title %></h1>
+<p class='pull-right'>
+  [<%= link_to 'edit this post', edit_post_path(@post) %>]
+</p>
 
-<strong>URL:</strong><br>
-<%= @post.url %><br>
+<p>
+  <%= render @post.categories %>
+</p>
 
-<strong>CONTENT:</strong><br>
-<%= @post.content %><br>
+<%= render 'shared/content_title', title: @post.title %>
 
-<strong>POSTED BY:</strong><br>
-<%= @post.user.username %>
+<p>
+  <%= @post.content %>
+</p>
+<hr>
 
-<br>
 
-<%= link_to "Back to All Posts", posts_path, class: "btn btn-primary" %>
+
+
