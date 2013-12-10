@@ -1,5 +1,5 @@
 <%= render 'shared/content_title', title: "Create a New Post" %>
-<%= render 'post_errors' %>
+<%= render 'shared/errors', controller_action: @post %>
 <%= render 'form', action: "Create post" %>
 
 

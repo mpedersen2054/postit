@@ -1,0 +1,12 @@
+<%= render 'shared/content_title', title: "Creating a new Category" %>
+
+<%= render 'category_errors', controller_action: @category %>
+
+<div class='well text-center'>
+  <%= form_for @category do |f| %>
+    <%= f.text_field :name %>
+
+    <br>
+    <%= f.submit 'Create category', class: 'btn btn-primary' %>
+  <% end %>
+</div>
