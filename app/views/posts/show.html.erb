@@ -12,3 +12,22 @@
   <%= @post.content %>
 </p>
 <hr>
+
+<%= form_for [@post, @comment] do |f| %>
+  <%= render 'shared/errors', controller_action: @comment %>
+  <div class="control-group">
+    <%= f.label :content, 'Leave a Comment' %>
+    <%= f.text_area :content, rows: 4, class: "span4" %>
+  </div>
+  <%= f.submit "create comment", class: "btn btn-success" %>
+<% end %>
+
+<h5>All Comments:</h5>
+<% @post.comments.each do |comment| %>
+  <div class="well span8">
+    <em>"<%= comment.content %>"</em>
+    <br>
+    <span class="quiet">posted by </span><%= comment.creator.username %>
+    <small> <%= time_ago_in_words(comment.created_at) %> ago</small>
+  </div>
+<% end %>
