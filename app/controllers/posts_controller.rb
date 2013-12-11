@@ -31,7 +31,6 @@ class PostsController < ApplicationController
   end
 
   def update
-
     if @post.update(post_params)
       flash[:notice] = "This Post was Updated"
       redirect_to post_path(@post)
@@ -47,7 +46,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :url, :content)
+    params.require(:post).permit(:title, :url, :content, category_ids: [])
   end
 end
 
