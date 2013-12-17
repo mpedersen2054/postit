@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   # before_action to set up var, or redirect based on condition
   # rails 3 was before_filter, rails 4 is before_action
   before_action :set_post, only: [:show, :edit, :update]
+  before_action :require_user, except: [:show, :index]
 
   def index
     @posts = Post.all
@@ -17,7 +18,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    @post.creator = User.first
+    @post.creator = current_user
 
     if @post.save
       flash[:notice] = "This Post was Created"
