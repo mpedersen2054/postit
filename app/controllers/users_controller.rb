@@ -6,7 +6,6 @@ class UsersController < ApplicationController
   end
 
   def edit
-
   end
 
   def update
@@ -14,7 +13,8 @@ class UsersController < ApplicationController
       flash[:notice] = "You've successfully updated your profile"
       redirect_to user_path(@user)
     else
-
+      flash[error] = "There was a problem with updating your profile"
+      render :edit
     end
   end
 
