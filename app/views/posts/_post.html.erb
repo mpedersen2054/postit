@@ -15,18 +15,19 @@
       <% end %>
     <% end %>
   </div>
-  <div class="span8 well">
+  <div class="span9 well">
     <%= render post.categories %>
     <h4><%= link_to post.title, fix_url(post.url) %></h4>
     <p><%= post.content %></p>
-    <p>
-      <span class="quiet">posted by:</span> <%= link_to post.creator.username, user_path(post.creator) %>
-      <small>at <%= display_datetime(post.created_at) %></small>
-    </p>
-    <small>
-      <span>
-        <%= link_to "#{post.comments.size} comments", post_path(post) %>
-      </span>
-    </small>
+    <br/>
+    <div class="post-meta">
+      <p>
+        <span class="quiet">posted by:</span> <%= link_to post.creator.username, user_path(post.creator) %>
+        about <%= time_ago_in_words(post.created_at) %>
+        <span class="pull-right">
+          <%= link_to "view comments (#{post.comments.size})", post_path(post) %>
+        </span>
+      </p>
+    </div>
   </div>
 </div>

@@ -1,9 +1,6 @@
-<ul class="nav">
+<ul class="nav nav">
   <li>
-    <%= link_to "Postit!", root_path, :class => 'brand' %>
-  </li>
-  <li>
-    <%= link_to 'show all users', '', class: 'pull-right'  %>
+    <%= link_to "POSTOPIA", root_path, :class => 'main-title' %>
   </li>
 </ul>
 
@@ -27,9 +24,6 @@
 </div>
 
 <% if logged_in? %>
-  <div class="nav_item">
-    <%= link_to 'New Post', new_post_path, class: "btn btn-success btn-small" %>
-  </div>
   <div class="btn-group nav_item">
     <%= link_to '', class: "btn btn-small dropdown-toggle", "data-toggle" => "dropdown" do %>
       <%= current_user.username %>
@@ -67,6 +61,11 @@
     <%= link_to 'Login', login_path, class: "btn btn-small" %>
   </div>
 <% end %>
+<div class="nav_item">
+  <%= link_to '+ NEW POST', new_post_path, class: "btn btn-large new-post" %>
+</div>
+
+
 
 
 
