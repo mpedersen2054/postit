@@ -2,7 +2,7 @@
   position: absolute;
   top: -7px;
   /*right: 135px;*/
-  right: 9%;
+  right: 5%;
   color: #3869B1;
   width: 150px
 }
@@ -10,11 +10,21 @@
 .main-title {
   font-size: 2.2em;
   color: white;
-  margin-left: 100px;
+  margin-left: 15%;
 }
 
 .post-meta {
   margin-bottom: -20px;
-  border-top: 1px solid #3869B1;
-  padding-top: 10px;
+  border-top: 2px solid #999999;
+  padding-top: 15px;
 }
+
+.vote-area {
+  float: left;
+}
+
+.post-well {
+  padding: 20px 89px;
+  float: left;
+}
+
