@@ -1,3 +1,7 @@
+body {
+  background-color: #FFEECD;
+}
+
 .new-post {
   position: absolute;
   top: -7px;
@@ -17,6 +21,7 @@
   margin-bottom: -20px;
   border-top: 2px solid #999999;
   padding-top: 15px;
+  padding-bottom: 10px;
 }
 
 .vote-area {
@@ -24,7 +29,170 @@
 }
 
 .post-well {
-  padding: 20px 89px;
+  padding: 25px 50px;
   float: left;
 }
+
+.a-button {
+  position: relative;
+  top: -5px;
+  height: 8px;
+  width: 123px;
+  padding-bottom: 18px;
+  text-align: center;
+  line-height: 17px;
+}
+
+
+.login-button {
+  a {
+    position: absolute;
+    right: 10.2%;
+  }
+}
+
+p.the-title {
+  border: 5px solid red;
+}
+
+p.lead {
+  font-size: 2em;
+  padding-bottom: 5px;
+  font-style: italic;
+  color: #999999;
+}
+
+
+#login-form {
+  width: 330px;
+  height: 215px;
+  padding: 20px;
+  background: #F5F5F5;
+  margin: 50px auto;
+  border: 3px solid #e8e8e8;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+
+  label {
+    display: block;
+    float: left;
+    text-align: right;
+    margin-right: 20px;
+    font-size: 1.3em;
+    padding-top: 10px;
+  }
+
+  input {
+    height: 30px;
+  }
+
+  .login-button {
+    float: right;
+    height: 40px;
+    margin-right: 10px;
+    margin-top: -5px;
+    width: 145px;
+    font-size: 1.3em;
+  }
+
+  .login-cancel-button {
+    float: right;
+    margin-right: 25px;
+    margin-top: 5.5px;
+    font-size: 1.1em;
+    padding-top: -20px;
+    text-decoration: underline;
+  }
+
+  .new-user {
+    display: block;
+    clear: both;
+    float: right;
+    margin-top: 30px;
+    margin-right: 10px;
+    font-size: 1.1em;
+  }
+}
+
+#register-form {
+  width: 330px;
+  height: 215px;
+  padding: 20px;
+  background: #F5F5F5;
+  margin: 50px auto;
+  border: 3px solid #e8e8e8;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+
+  label {
+    display: block;
+    float: left;
+    text-align: right;
+    margin-right: 20px;
+    font-size: 1.3em;
+    padding-top: 10px;
+  }
+
+  input {
+    height: 30px;
+  }
+
+  .login-button {
+    float: right;
+    height: 40px;
+    margin-right: 10px;
+    margin-top: -5px;
+    width: 145px;
+    font-size: 1.3em;
+  }
+
+  .login-cancel-button {
+    float: right;
+    margin-right: 25px;
+    margin-top: 5.5px;
+    font-size: 1.1em;
+    padding-top: -20px;
+    text-decoration: underline;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

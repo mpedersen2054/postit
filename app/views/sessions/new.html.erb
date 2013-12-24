@@ -1,6 +1,8 @@
+
+<% logging_in = false %>
 <%= render 'shared/content_title', title: "Log in" %>
 
-<div class="well">
+<div id="login-form">
   <%= form_tag '/login' do %>
     <div class="control-group">
       <%= label_tag :username %>
@@ -11,6 +13,10 @@
       <%= label_tag :password %>
       <%= password_field_tag :password %>
     </div>
-    <%= submit_tag 'Login', class: 'btn btn-success' %>
+    <br/>
+    <%= submit_tag 'Login', class: 'btn btn-success login-button' %>
+    <%= link_to 'Cancel', posts_path, class: 'login-cancel-button' %>
+    <br/>
+    <%= link_to 'Register new account', register_path, class: 'new-user' %>
   <% end %>
 </div>

@@ -1,11 +1,13 @@
-<ul class="nav nav">
+<ul class="nav">
   <li>
     <%= link_to "POSTOPIA", root_path, :class => 'main-title' %>
   </li>
 </ul>
 
+
+<%# categories dropdown %>
 <div class="nav_item btn-group">
-  <%= link_to '#', class: "btn btn-small dropdown-toggle", 'data-toggle' => 'dropdown' do %>
+  <%= link_to '#', class: "btn btn-large btn-success dropdown-toggle a-button", 'data-toggle' => 'dropdown' do %>
     Categories <span class="caret"></span>
   <% end %>
   <ul class="dropdown-menu">
@@ -16,16 +18,18 @@
     <% if logged_in? %>
       <li><%= link_to new_category_path do %>
         <i class="icon-plus"></i>
-        New Category
+        New category
         <% end %>
       </li>
     <% end %>
   </ul>
 </div>
 
+<%# if logged_in? user dropdown %>
 <% if logged_in? %>
+
   <div class="btn-group nav_item">
-    <%= link_to '', class: "btn btn-small dropdown-toggle", "data-toggle" => "dropdown" do %>
+    <%= link_to '', class: "btn btn-large dropdown-toggle a-button", "data-toggle" => "dropdown" do %>
       <%= current_user.username %>
       <span class="caret"></span>
     <% end %>
@@ -33,41 +37,32 @@
       <li>
         <%= link_to edit_user_path(current_user) do %>
           <i class="icon-pencil"></i>
-          edit profile
+          Edit profile
         <% end %>
       </li>
 
       <li>
         <%= link_to user_path(current_user) do %>
           <i class="icon-user"></i>
-          view profile
+          View profile
         <% end %>
       </li>
 
       <li>
         <%= link_to logout_path(current_user) do %>
           <i class="icon-circle-arrow-left"></i>
-          logout
+          Logout
         <% end %>
       </li>
     </ul>
   </div>
 
+<%# else register and login buttons %>
 <% else %>
-  <div class="nav_item">
-    <%= link_to 'Register', register_path, class: "btn btn-success btn-small" %>
-  </div>
-  <div class="nav_item">
-    <%= link_to 'Login', login_path, class: "btn btn-small" %>
-  </div>
+  <% if logging_in = true %>
+    <div class="nav_item login-button">
+      <%= link_to 'Login', login_path, class: "btn btn-large btn-success a-button" %>
+    </div>
+  <% end %>
 <% end %>
-<div class="nav_item">
-  <%= link_to '+ NEW POST', new_post_path, class: "btn btn-large new-post" %>
-</div>
-
-
-
-
-
-
 
