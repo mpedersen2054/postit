@@ -1,35 +1,38 @@
-<div class="row">
+<div class="row whole-post">
 
-  <div class="span0 well text-center">
-    <% if logged_in? %>
-      <%= link_to vote_post_path(post, vote: true), method: 'post' do %>
-        <i class="icon-arrow-up"></i>
-      <% end %>
-    <% end %>
-    <br/>
-    <%= pluralize(post.total_votes, 'vote') %>
-    <br/>
-    <% if logged_in? %>
-      <%= link_to vote_post_path(post, vote: false), method: 'post' do %>
-        <i class="icon-arrow-down"></i>
-      <% end %>
-    <% end %>
-  </div>
+
 
   <div class="span9 well post-well">
-    <%= render post.categories %>
-    <h4><%= link_to post.title, fix_url(post.url) %></h4>
-    <p><%= post.content %></p>
-    <br/>
-    <div class="post-meta">
-      <p>
-        <span class="quiet">posted by:</span> <%= link_to post.creator.username, user_path(post.creator) %>
-        about <%= time_ago_in_words(post.created_at) %>
-        <span class="pull-right">
-          <%= link_to "view comments (#{post.comments.size})", post_path(post) %>
-        </span>
-      </p>
+    <div class="span0 text-center voting">
+      <% if logged_in? %>
+        <%= link_to vote_post_path(post, vote: true), method: 'post' do %>
+          <i class="icon-arrow-up"></i>
+        <% end %>
+      <% end %>
+      <br/>
+      <%= pluralize(post.total_votes, 'vote') %>
+      <br/>
+      <% if logged_in? %>
+        <%= link_to vote_post_path(post, vote: false), method: 'post' do %>
+          <i class="icon-arrow-down"></i>
+        <% end %>
+      <% end %>
     </div>
+    <section class="posting">
+      <%= render post.categories %>
+      <h4><%= link_to post.title, fix_url(post.url) %></h4>
+      <p><%= post.content %></p>
+      <br/>
+      <div class="post-meta">
+        <p>
+          <span class="quiet">posted by:</span> <%= link_to post.creator.username, user_path(post.creator) %>
+          about <%= time_ago_in_words(post.created_at) %>
+          <span class="pull-right">
+            <%= link_to "view comments (#{post.comments.size})", post_path(post) %>
+          </span>
+        </p>
+      </div>
+    </section>
   </div>
 
 </div>
