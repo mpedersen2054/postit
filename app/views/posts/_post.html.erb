@@ -1,9 +1,7 @@
-<div class="row whole-post">
-
-
+<div class="row">
 
   <div class="span9 well post-well">
-    <div class="span0 text-center voting">
+    <div class="span0 voting">
       <% if logged_in? %>
         <%= link_to vote_post_path(post, vote: true), method: 'post' do %>
           <i class="icon-arrow-up"></i>
