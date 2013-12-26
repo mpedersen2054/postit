@@ -59,7 +59,6 @@ class PostsController < ApplicationController
       end
 
       format.js
-
     end
   end
 
