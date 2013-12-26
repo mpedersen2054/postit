@@ -1,27 +1,30 @@
 <div class="row">
-  <div class="span0 well text-center">
 
+  <!-- POST'S VOTE -->
+  <div class="span0 well text-center">
     <% if logged_in? %>
-      <%= link_to vote_post_path(post, vote: true), method: 'post' do %>
+      <%= link_to vote_post_path(post, vote: true), method: 'post', remote: true do %>
         <i class="icon-arrow-up"></i>
       <% end %>
     <% end %>
     <br/>
-    <%= pluralize(post.total_votes, 'vote') %>
+    <span id="post_<%=post.id%>_votes"><%= pluralize(post.total_votes, 'vote') %></span>
     <br/>
     <% if logged_in? %>
-      <%= link_to vote_post_path(post, vote: false), method: 'post' do %>
+      <%= link_to vote_post_path(post, vote: false), method: 'post', remote: true do %>
         <i class="icon-arrow-down"></i>
       <% end %>
     <% end %>
   </div>
+
+  <!-- POST'S CONTENT -->
   <div class="span8 well">
     <%= render post.categories %>
     <h4><%= link_to post.title, fix_url(post.url) %></h4>
     <p><%= post.content %></p>
     <p>
       <span class="quiet">posted by:</span> <%= link_to post.creator.username, user_path(post.creator) %>
-      <small>at <%= display_datetime(post.created_at) %></small>
+      <small>about <%= time_ago_in_words(post.created_at) %> ago</small>
     </p>
     <small>
       <span>
@@ -29,4 +32,5 @@
       </span>
     </small>
   </div>
+
 </div>
