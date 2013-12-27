@@ -1,17 +1,15 @@
 <!-- BRAND -->
 <ul class="nav">
   <li>
-    <%= link_to "Postit", root_path, :class => 'brand' %>
+    <%= link_to "Postit", root_path, :class => 'brand postit_brand' %>
   </li>
-  <li>
-    <%= link_to 'show all users', '', class: 'pull-right'  %>
-  </li>
+  <li class="divider-vertical"></li>
 </ul>
 
 <!-- CATEGORIES DROPDOWN -->
 <div class="nav_item btn-group">
-  <%= link_to '#', class: "btn btn-small dropdown-toggle", 'data-toggle' => 'dropdown' do %>
-    Categories <span class="caret"></span>
+  <%= link_to '#', class: "btn btn-small btn-warning categories_button dropdown-toggle", 'data-toggle' => 'dropdown' do %>
+    Categories <i class="icon-chevron-down icon-white"></i>
   <% end %>
   <ul class="dropdown-menu">
     <% Category.all.each do |category| %>
@@ -31,49 +29,53 @@
 <!-- IF LOGGED IN USER DROPDOWN -->
 <% if logged_in? %>
 
-  <div class="nav_item">
-    <%= link_to 'New Post', new_post_path, class: "btn btn-success btn-small" %>
-  </div>
-  <div class="btn-group nav_item">
-    <%= link_to '', class: "btn btn-small dropdown-toggle", "data-toggle" => "dropdown" do %>
-      <%= current_user.username %>
-      <span class="caret"></span>
-    <% end %>
-    <ul class="dropdown-menu">
-      <li>
-        <%= link_to edit_user_path(current_user) do %>
-          <i class="icon-pencil"></i>
-          edit profile
-        <% end %>
-      </li>
+  <ul class="nav pull-right">
+    <div class="btn-group nav_item">
+      <%= link_to '', class: "btn btn-small btn-primary user_button dropdown-toggle", "data-toggle" => "dropdown" do %>
+        <%= current_user.username %>
+        <i class="icon-chevron-down icon-white"></i>
+      <% end %>
+      <ul class="dropdown-menu">
+        <li>
+          <%= link_to edit_user_path(current_user) do %>
+            <i class="icon-pencil"></i>
+            edit profile
+          <% end %>
+        </li>
 
-      <li>
-        <%= link_to user_path(current_user) do %>
-          <i class="icon-user"></i>
-          view profile
-        <% end %>
-      </li>
+        <li>
+          <%= link_to user_path(current_user) do %>
+            <i class="icon-user"></i>
+            view profile
+          <% end %>
+        </li>
 
-      <li>
-        <%= link_to logout_path(current_user) do %>
-          <i class="icon-circle-arrow-left"></i>
-          logout
-        <% end %>
-      </li>
+        <li>
+          <%= link_to logout_path(current_user) do %>
+            <i class="icon-circle-arrow-left"></i>
+            logout
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </ul>
+  <!-- ELSE LOGIN BUTTON -->
+  <% else %>
+    <ul class="nav pull-right">
+      <div class="nav_item non_button_nav_item">
+        <%= link_to 'Register', register_path %>
+      </div>
+
+      <div class="nav_item non_button_nav_item">
+        <p>or</p>
+      </div>
+
+      <div class="nav_item">
+        <%= link_to 'Login', login_path, class: "btn btn-small btn-primary login_button" %>
+      </div>
+
     </ul>
-  </div>
-
-<!-- ELSE LOGIN BUTTON -->
-<% else %>
-
-  <div class="nav_item">
-    <%= link_to 'Register', register_path, class: "btn btn-success btn-small" %>
-  </div>
-  <div class="nav_item">
-    <%= link_to 'Login', login_path, class: "btn btn-small" %>
-  </div>
-
-<% end %>
+  <% end %>
 
 
 

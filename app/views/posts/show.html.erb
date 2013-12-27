@@ -4,13 +4,16 @@
   </p>
 <% end %>
 
+<br/>
+<br/>
 <p>
   <%= render @post.categories %>
 </p>
 
+<br/>
 <%= render 'shared/content_title', title: @post.title %>
 
-<p>
+<p class="well well-large">
   <%= @post.content %>
 </p>
 <hr>
@@ -22,7 +25,7 @@
       <%= f.label :content, 'Leave a Comment' %>
       <%= f.text_area :content, rows: 4, class: "span4" %>
     </div>
-    <%= f.submit "create comment", class: "btn btn-success" %>
+    <%= f.submit "create comment", class: "btn btn-primary" %>
   <% end %>
 <% end %>
 
