@@ -22,16 +22,30 @@
 }
 
 .postit_brand {
-  width: 75px;
+  width: 93px;
+  line-height: 20px;
 }
 
 .lead {
   border-bottom: 1px solid orange;
-  padding-bottom: 12px;
+  padding-bottom: 20px;
+  color: #59B0DB;
 }
 
 .comment_well {
   min-height: 60px;
+}
+
+.show_post_content {
+  padding-bottom: 50px;
+}
+
+.post_title {
+  text-decoration: underline;
+}
+
+.badge-warning {
+  margin-bottom: 10px;
 }
 
 

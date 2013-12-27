@@ -10,13 +10,11 @@
   <%= render @post.categories %>
 </p>
 
-<br/>
 <%= render 'shared/content_title', title: @post.title %>
 
-<p class="well well-large">
+<p class="well well-large show_post_content">
   <%= @post.content %>
 </p>
-<hr>
 
 <% if logged_in? %>
   <%= form_for [@post, @comment] do |f| %>

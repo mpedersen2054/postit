@@ -18,9 +18,9 @@
   </div>
 
   <!-- POST'S CONTENT -->
-  <div class="span8 well">
+  <div class="span9 well">
     <%= render post.categories %>
-    <h4><%= link_to post.title, fix_url(post.url) %></h4>
+    <h4><%= link_to post.title, fix_url(post.url), class: 'post_title' %></h4>
     <p><%= post.content %></p>
     <p>
       <span class="quiet">posted by:</span> <%= link_to post.creator.username, user_path(post.creator) %>
