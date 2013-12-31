@@ -8,7 +8,7 @@
       <% end %>
     <% end %>
     <br/>
-    <span id="post_<%=@post.slug%>_votes"><%= pluralize(post.total_votes, 'vote') %></span>
+    <span id="post_<%=post.slug%>_votes"><%= pluralize(post.total_votes, 'vote') %></span>
     <br/>
     <% if logged_in? %>
       <%= link_to vote_post_path(post, vote: false), method: 'post', remote: true do %>
@@ -18,19 +18,18 @@
   </div>
 
   <!-- POST'S CONTENT -->
-  <div class="span9 well">
+  <div class="span9 well each_post">
     <%= render post.categories %>
     <h4><%= link_to post.title, fix_url(post.url), class: 'post_title' %></h4>
     <p><%= post.content %></p>
-    <p>
+    <hr/>
+    <p class="post_meta">
       <span class="quiet">posted by:</span> <%= link_to post.creator.username, user_path(post.creator) %>
       <small>about <%= time_ago_in_words(post.created_at) %> ago</small>
-    </p>
-    <small>
-      <span>
-        <%= link_to "#{post.comments.size} comments", post_path(post) %>
+      <span class="pull-right">
+        <%= link_to "View comments (#{post.comments.size})", post_path(post) %>
       </span>
-    </small>
+    </p>
   </div>
 
 </div>

@@ -1,5 +1,5 @@
 <% if logged_in? %>
-  <p class='pull-right'>
+  <p class='pull-right edit_profile'>
     [<%= link_to 'edit this post', edit_post_path(@post) %>]
   </p>
 <% end %>
@@ -21,7 +21,7 @@
     <%= render 'shared/errors', controller_action: @comment %>
     <div class="control-group">
       <%= f.label :content, 'Leave a Comment' %>
-      <%= f.text_area :content, rows: 4, class: "span4" %>
+      <%= f.text_area :content, rows: 4, class: "span5" %>
     </div>
     <%= f.submit "create comment", class: "btn btn-primary" %>
   <% end %>

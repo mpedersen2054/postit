@@ -1,3 +1,23 @@
+
+// FOR HIGHLIGHTING TEXT COLOR
+// ::selection {
+// color: white;
+// background-color: orange;
+// }
+// ::-moz-selection {
+//   color: white;
+//   background-color: orange;
+// }
+
+
+.edit_profile {
+  margin-right: 20px;
+}
+
+.each_post {
+  padding: 25px 55px
+}
+
 .non_button_nav_item {
   display: inline;
   margin-top: 13px;
@@ -48,5 +68,8 @@
   margin-bottom: 10px;
 }
 
-
+.post_meta {
+  padding-bottom: 15px;
+  margin-bottom: -20px;
+}
 
