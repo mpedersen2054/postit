@@ -1,7 +1,8 @@
 <% show_post ||= false %>
 
+<!-- COMMENT VOTE -->
 <div class="row">
-  <div class="span0 well text-center">
+  <div class="span0 well text-center each_vote">
     <% if logged_in? %>
       <%= link_to vote_post_comment_path(comment.post, comment, vote: true), method: 'post', remote: true do %>
         <i class="icon-arrow-up icon-white"></i>
@@ -17,7 +18,8 @@
     <% end %>
   </div>
 
-  <div class="well span8 comment_well">
+  <!-- COMMENT CONTENT -->
+  <div class="well span8 comment_well each_comment">
       <em>"<%= comment.content %>"</em>
       <% if show_post %>
         on <%= link_to comment.post.title, post_path(comment.post) %>

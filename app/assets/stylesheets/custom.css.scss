@@ -8,14 +8,63 @@
 //   color: white;
 //   background-color: orange;
 // }
+* {
+  color: #FFFFFF;
+}
 
+#main {
+  padding-top: 5%;
+}
+
+#wrapper {
+  background-color: #613841;
+  length: 100%;
+}
+
+.lead {
+  color: #FFFFFF;
+}
+
+.whited {
+  color: #FFFFFF;
+}
+
+.blued {
+  color: #59B0DB;
+}
+
+.left-nav {
+  margin-left: 40px;
+}
+
+.navbar {
+  border-bottom: 3px solid #613841;
+  -webkit-border-radius: 35px;
+  -moz-border-radius: 35px;
+  border-radius: 35px;
+}
 
 .edit_profile {
   margin-right: 20px;
 }
 
 .each_post {
-  padding: 25px 55px
+  padding: 25px 55px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+}
+
+.each_vote {
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+}
+
+.each_comment {
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
 }
 
 .non_button_nav_item {
@@ -31,10 +80,12 @@
 
 .login_button {
   width:100px;
+  margin-right: 26px;
 }
 
 .user_button {
   width:100px;
+  margin-right: 26px;
 }
 
 .categories_button {
@@ -42,7 +93,7 @@
 }
 
 .postit_brand {
-  width: 93px;
+  width: 105px;
   line-height: 20px;
 }
 
@@ -72,4 +123,5 @@
   padding-bottom: 15px;
   margin-bottom: -20px;
 }
+
 

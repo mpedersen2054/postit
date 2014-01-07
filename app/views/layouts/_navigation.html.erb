@@ -1,37 +1,38 @@
 <!-- BRAND -->
-<ul class="nav">
-  <li>
-    <%= link_to "Postit", root_path, :class => 'brand postit_brand' %>
-  </li>
-  <li class="divider-vertical"></li>
-</ul>
-
-<!-- CATEGORIES DROPDOWN -->
-<div class="nav_item btn-group">
-  <%= link_to '#', class: "btn btn-small btn-warning categories_button dropdown-toggle", 'data-toggle' => 'dropdown' do %>
-    Categories<i class="icon-chevron-down icon-white"></i>
-  <% end %>
-  <ul class="dropdown-menu">
-    <% Category.all.each do |category| %>
-      <li><%= link_to category.name, category_path(category) %></li>
-    <% end %>
-    <% if logged_in? and current_user.admin? %>
-      <li class="divider"></li>
-      <li><%= link_to new_category_path do %>
-        <i class="icon-plus icon-white"></i>
-        New Category
-        <% end %>
-      </li>
-    <% end %>
+<div class="left-nav">
+  <ul class="nav">
+    <li>
+      <%= link_to "Postit", root_path, :class => 'brand postit_brand' %>
+    </li>
+    <li class="divider-vertical"></li>
   </ul>
-</div>
 
+  <!-- CATEGORIES DROPDOWN -->
+  <div class="nav_item btn-group">
+    <%= link_to '#', class: "btn btn-warning categories_button dropdown-toggle", 'data-toggle' => 'dropdown' do %>
+      Categories<i class="icon-chevron-down icon-white"></i>
+    <% end %>
+    <ul class="dropdown-menu">
+      <% Category.all.each do |category| %>
+        <li><%= link_to category.name, category_path(category) %></li>
+      <% end %>
+      <% if logged_in? and current_user.admin? %>
+        <li class="divider"></li>
+        <li><%= link_to new_category_path do %>
+          <i class="icon-plus icon-white"></i>
+          New Category
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+
+</div>
 <!-- IF LOGGED IN USER DROPDOWN -->
 <% if logged_in? %>
-
   <ul class="nav pull-right">
     <div class="btn-group nav_item">
-      <%= link_to '', class: "btn btn-small btn-primary user_button dropdown-toggle", "data-toggle" => "dropdown" do %>
+      <%= link_to '', class: "btn btn-primary user_button dropdown-toggle", "data-toggle" => "dropdown" do %>
         <%= current_user.username %>
         <i class="icon-chevron-down icon-white"></i>
       <% end %>
@@ -42,14 +43,12 @@
             edit profile
           <% end %>
         </li>
-
         <li>
           <%= link_to user_path(current_user) do %>
             <i class="icon-user icon-white"></i>
             view profile
           <% end %>
         </li>
-
         <li>
           <%= link_to logout_path(current_user) do %>
             <i class="icon-circle-arrow-left icon-white"></i>
@@ -60,7 +59,8 @@
     </div>
   </ul>
   <!-- ELSE LOGIN BUTTON -->
-  <% else %>
+<% else %>
+  <div class="right-nav">
     <ul class="nav pull-right">
       <div class="nav_item non_button_nav_item">
         <%= link_to 'Register', register_path %>
@@ -71,11 +71,11 @@
       </div>
 
       <div class="nav_item">
-        <%= link_to 'Login', login_path, class: "btn btn-small btn-primary login_button" %>
+        <%= link_to 'Login', login_path, class: "btn btn-primary login_button" %>
       </div>
-
     </ul>
-  <% end %>
+  </div>
+<% end %>
 
 
 
